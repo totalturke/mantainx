@@ -1,0 +1,18 @@
+[
+	{
+		"kind": "column",
+		"name": "Glide Plugin Starter",
+		"description": "This is a starter plugin for Glide. It allows you to pass a string to a function and return a string.",
+		"author": "Marco Volpato <marco@loqode.com>",
+		"params": [
+			{
+				"name": "string",
+				"displayName": "String",
+				"type": "string"
+			}
+		],
+		"result": {
+			"type": "string"
+		}
+	}
+]
