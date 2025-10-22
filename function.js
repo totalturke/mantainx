@@ -2,10 +2,12 @@ window.function = async function (link) {
 	try {
 		const url = link.value;
 		
-		// Fetch content from the URL
-		const response = await fetch(url, {
-			method: 'GET',
-			mode: 'cors'
+		// Use AllOrigins as CORS proxy to fetch content
+		const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
+		
+		// Fetch content from the URL via proxy
+		const response = await fetch(proxyUrl, {
+			method: 'GET'
 		});
 		
 		if (!response.ok) {
