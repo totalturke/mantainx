@@ -2,17 +2,12 @@
 	{
 		"kind": "column",
 		"name": "Glide Plugin Starter",
-		"description": "This plugin accepts a link and API key, fetches data from the URL, and returns JSON response.",
+		"description": "This plugin accepts a link and fetches the content from the URL.",
 		"author": "Marco Volpato <marco@loqode.com>",
 		"params": [
 			{
 				"name": "link",
 				"displayName": "Link",
-				"type": "string"
-			},
-			{
-				"name": "apiKey",
-				"displayName": "API Key",
 				"type": "string"
 			}
 		],
