@@ -2,12 +2,17 @@
 	{
 		"kind": "column",
 		"name": "Glide Plugin Starter",
-		"description": "This is a starter plugin for Glide. It allows you to pass a string to a function and return a string.",
+		"description": "This plugin accepts a link and API key, fetches data from the URL, and returns JSON response.",
 		"author": "Marco Volpato <marco@loqode.com>",
 		"params": [
 			{
-				"name": "string",
-				"displayName": "String",
+				"name": "link",
+				"displayName": "Link",
+				"type": "string"
+			},
+			{
+				"name": "apiKey",
+				"displayName": "API Key",
 				"type": "string"
 			}
 		],
