@@ -8,19 +8,27 @@ window.function = async function (link, apiKey) {
 			method: 'GET',
 			headers: {
 				'Authorization': `Bearer ${api}`,
-				'Content-Type': 'application/json'
-			}
+				'Accept': 'application/json'
+			},
+			mode: 'cors'
 		});
 		
 		if (!response.ok) {
-			throw new Error(`HTTP error! status: ${response.status}`);
+			const errorText = await response.text();
+			throw new Error(`HTTP ${response.status}: ${errorText}`);
 		}
 		
 		// Parse and return JSON response
 		const jsonData = await response.json();
-		return JSON.stringify(jsonData);
+		return JSON.stringify(jsonData, null, 2);
 		
 	} catch (error) {
-		throw new Error(`Failed to fetch data: ${error.message}`);
+		// Return detailed error information
+		return JSON.stringify({
+			error: true,
+			message: error.message,
+			type: error.name,
+			url: link.value
+		}, null, 2);
 	}
 };
